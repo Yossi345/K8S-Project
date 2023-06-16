@@ -1,0 +1,38 @@
+a. kubectl set image deployment/webapp nginx=nginx:1.100
+
+NAME                      READY   STATUS             RESTARTS   AGE
+webapp-6684ccd7b8-bgbtb   1/1     Running            0          9m37s
+webapp-6684ccd7b8-tdvzk   1/1     Running            0          9m38s
+webapp-6684ccd7b8-c7n25   1/1     Running            0          9m38s
+webapp-6684ccd7b8-9zksn   1/1     Running            0          9m33s
+webapp-845bf67968-99sjb   0/1     ErrImagePull       0          3m27s
+webapp-845bf67968-4thwx   0/1     ErrImagePull       0          3m27s
+webapp-845bf67968-mzkw4   0/1     ImagePullBackOff   0          3m27s
+
+
+b.kubectl rollout undo deployment/webapp
+k get pods -l app=webapp
+
+NAME                      READY   STATUS    RESTARTS   AGE
+webapp-6684ccd7b8-bgbtb   1/1     Running   0          15m
+webapp-6684ccd7b8-tdvzk   1/1     Running   0          15m
+webapp-6684ccd7b8-c7n25   1/1     Running   0          15m
+webapp-6684ccd7b8-9zksn   1/1     Running   0          15m
+webapp-6684ccd7b8-45kqp   1/1     Running   0          2m14s
+
+c.kubectl rollout history deploy webapp --revision=5
+
+deployment.apps/webapp with revision #5
+Pod Template:
+  Labels:       app=webapp
+        pod-template-hash=6684ccd7b8
+  Containers:
+   nginx:
+    Image:      nginx
+    Port:       <none>
+    Host Port:  <none>
+    Environment:        <none>
+    Mounts:     <none>
+  Volumes:      <none>
+
+  e. kubectl set image deployment/webapp nginx=nginx:latest

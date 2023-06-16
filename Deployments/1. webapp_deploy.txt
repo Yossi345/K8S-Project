@@ -1,0 +1,1 @@
+kubectl create deployment webapp --image=nginx --replicas=5 --dry-run=client -o yaml > 1.webapp_deploy.yaml

@@ -1,0 +1,13 @@
+# command: kubectl create cm keyvalcfgmap --from-env-file 1.config.txt
+
+apiVersion: v1
+data:
+  key1: Hello
+  key2: ByeBye
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-06-16T11:36:09Z"
+  name: keyvalcfgmap
+  namespace: default
+  resourceVersion: "1071"
+  uid: c579b660-c8fe-4d45-a827-83d5bc041e7f

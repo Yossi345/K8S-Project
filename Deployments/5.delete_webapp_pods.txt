@@ -1,0 +1,6 @@
+k delete pods -l app=webapp > 5.delete_webapp_pods
+pod "webapp-6684ccd7b8-r2dxv" deleted
+pod "webapp-6684ccd7b8-6q5zb" deleted
+pod "webapp-6684ccd7b8-s7kj4" deleted
+pod "webapp-6684ccd7b8-qqdlv" deleted
+pod "webapp-6684ccd7b8-lj75g" deleted

@@ -1,0 +1,4 @@
+kubectl delete deploy,hpa webapp
+
+deployment.apps "webapp" deleted
+horizontalpodautoscaler.autoscaling "webapp" deleted

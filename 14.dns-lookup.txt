@@ -1,0 +1,9 @@
+# there is no curl in busybox so I used wget
+
+/ # wget nginx-resolver-service.default.svc.cluster.local
+Connecting to nginx-resolver-service.default.svc.cluster.local (10.43.170.81:80)
+index.html           100% |***********************************************************************************************************************************************************************|   615   0:00:00 ETA
+
+
+/ # wget nginx-resolver.default.pod.cluster.local
+wget: bad address 'nginx-resolver.default.pod.cluster.local'

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-critical
+  labels:
+    name: myapp
+spec:
+  nodeName: node01
+  containers:
+  - name: nginx
+    image: nginx
+    restartPolicy: allways
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  

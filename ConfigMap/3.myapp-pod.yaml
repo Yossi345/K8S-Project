@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: myapp
+    image: nginx
+    env:
+    - name: Hello
+      valueFrom:
+        configMapKeyRef:
+          name: keyvalcfgmap
+          key: key1
+    - name: Bye
+      valueFrom:
+       configMapKeyRef:
+         name: keyvalcfgmap
+         key: key2
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"

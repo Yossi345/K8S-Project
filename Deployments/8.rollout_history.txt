@@ -1,0 +1,7 @@
+# command: kubectl rollout history deployment/webapp
+
+deployment.apps/webapp 
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+
